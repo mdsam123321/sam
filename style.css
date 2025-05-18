@@ -46,23 +46,34 @@ body.light {
   font-weight: 700;
   color: #a259ff;
 }
+/* Default: Mobile View */
 .nav-links {
-  display: flex;
+  display: none;
+  flex-direction: column;
   list-style: none;
   gap: 30px;
 }
+
+.nav-links.active {
+  display: flex;
+}
+
 .nav-links a {
   text-decoration: none;
   color: inherit;
   font-weight: 500;
   transition: 0.3s;
 }
+
 .nav-links a:hover {
   color: #a259ff;
 }
+
 .menu-toggle {
-  display: none;
+  display: block;
+  cursor: pointer;
 }
+
 .menu-toggle span {
   display: block;
   width: 25px;
@@ -70,17 +81,31 @@ body.light {
   background: #a259ff;
   margin: 5px 0;
 }
+
 .nav-controls {
   display: flex;
   align-items: center;
   gap: 20px;
 }
-  .theme-btn {
+
+.theme-btn {
   background: transparent;
   border: none;
   font-size: 20px;
   cursor: pointer;
-} 
+}
+
+/* Desktop view: 768px and up */
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex !important;
+    flex-direction: row;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+}
 
 /* Hero Section */
 .hero-section {

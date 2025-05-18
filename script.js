@@ -30,7 +30,7 @@ themeBtn.addEventListener('click', () => {
   themeBtn.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
 });
 
-// Mobile Menu Toggle
+// Mobile menu toggle
 const mobileMenu = document.getElementById('mobile-menu');
 const navLinks = document.getElementById('nav-links');
 
@@ -38,6 +38,12 @@ mobileMenu.addEventListener('click', () => {
   navLinks.classList.toggle('active');
 });
 
+// Optional: Close menu on link click
+document.querySelectorAll('#nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+  });
+});
 
 AOS.init({
   duration: 1000,
